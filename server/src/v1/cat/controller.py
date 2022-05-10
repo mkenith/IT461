@@ -24,7 +24,7 @@ class CatController(BaseController):
             filters = {"id": cat_id}
         cat = self._instance.read(filters)
         if cat is None:
-            return make_response(jsonify({"error": "Cat id not found."}), 404)
+            return make_response(jsonify({"error": "cat id not found."}), 404)
         return cat
 
     def get(self, cat_id=None):
