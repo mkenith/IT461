@@ -1,0 +1,57 @@
+@host = http://127.0.0.1:6000/v1/users
+
+GET {{host}}/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOjEwMCwiZXhwIjoxNjUzMDQzNzQ2fQ.s0jd--_RgsTmYtWHbuTRGaxu32CiuxNwOKCLcmynalo HTTP/1.1
+
+
+###
+POST {{host}}/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOjEwMCwiZXhwIjoxNjUzMDQ0NDQzfQ.hR_usv1KBLKK_wmJPZ3JKaC6l7c7NFtSy9tYk7m8YMI HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "username": "user1",
+    "password": "pass1"
+}
+
+
+###
+PUT {{host}}/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOjEwMCwiZXhwIjoxNjUzMDQ0NDQzfQ.hR_usv1KBLKK_wmJPZ3JKaC6l7c7NFtSy9tYk7m8YMI HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "username": "user2",
+    "password": "pass2"
+}
+
+
+###
+DELETE {{host}}/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IlVzZXJoaWUyIiwiaWQiOjEwMCwiZXhwIjoxNjUyOTUxOTMzfQ.LbLD-8vqSFZ4CxBdZCXTM40FNS7dBZybWaoG58Dshko HTTP/1.1
+Content-Type: application/json
+
+[2,3]
+
+
+
+###
+GET {{host}}/1?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IlVzZXJoaWUyIiwiaWQiOjEwMCwiZXhwIjoxNjUyOTUxOTMzfQ.LbLD-8vqSFZ4CxBdZCXTM40FNS7dBZybWaoG58Dshko HTTP/1.1
+
+###
+PUT {{host}}/1?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IlVzZXJoaWUyIiwiaWQiOjEwMCwiZXhwIjoxNjUyOTUxOTMzfQ.LbLD-8vqSFZ4CxBdZCXTM40FNS7dBZybWaoG58Dshko HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 1, 
+  "username": "useruser",
+  "password": "pashpash"
+}
+
+
+###
+DELETE {{host}}/1?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IlVzZXJoaWUyIiwiaWQiOjEwMCwiZXhwIjoxNjUyOTUxOTMzfQ.LbLD-8vqSFZ4CxBdZCXTM40FNS7dBZybWaoG58Dshko HTTP/1.1
+
+###
+GET {{host}}/?fields=username&offset=0&limit=5&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IlVzZXJoaWUyIiwiaWQiOjEwMCwiZXhwIjoxNjUyOTUxOTMzfQ.LbLD-8vqSFZ4CxBdZCXTM40FNS7dBZybWaoG58Dshko HTTP/1.1
+
+###
+GET {{host}}/4?fields=username&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IlVzZXJoaWUyIiwiaWQiOjEwMCwiZXhwIjoxNjUyOTUxOTMzfQ.LbLD-8vqSFZ4CxBdZCXTM40FNS7dBZybWaoG58Dshko HTTP/1.1
