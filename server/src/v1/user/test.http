@@ -1,21 +1,21 @@
-@host = http://127.0.0.1:6000/v1/users
+@host = http://127.0.0.1:8080/v1/users
 
-GET {{host}}/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOjEwMCwiZXhwIjoxNjUzMDQzNzQ2fQ.s0jd--_RgsTmYtWHbuTRGaxu32CiuxNwOKCLcmynalo HTTP/1.1
+GET {{host}}/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOjEwMCwiZXhwIjoxNjUzNzI2MDkyfQ.tPnA3X2Hy6tzLQoP-CR9axdaqPC7y7CxfBVv9F3FikA HTTP/1.1
 
 
 ###
-POST {{host}}/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOjEwMCwiZXhwIjoxNjUzMDQ0NDQzfQ.hR_usv1KBLKK_wmJPZ3JKaC6l7c7NFtSy9tYk7m8YMI HTTP/1.1
+POST {{host}}/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOjEwMCwiZXhwIjoxNjUzNzI0NjMzfQ.AIFZdrP9P3AAYVP4_QPYqdn3mUAs8AH5A5OtFCkG1aw HTTP/1.1
 Content-Type: application/json
 
 {
     "id": 1,
-    "username": "user1",
-    "password": "pass1"
+    "username": "gegege",
+    "password": "kkkkkk"
 }
 
 
 ###
-PUT {{host}}/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOjEwMCwiZXhwIjoxNjUzMDQ0NDQzfQ.hR_usv1KBLKK_wmJPZ3JKaC6l7c7NFtSy9tYk7m8YMI HTTP/1.1
+PUT {{host}}/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOjEwMCwiZXhwIjoxNjUzNzI0NjMzfQ.AIFZdrP9P3AAYVP4_QPYqdn3mUAs8AH5A5OtFCkG1aw HTTP/1.1
 Content-Type: application/json
 
 {

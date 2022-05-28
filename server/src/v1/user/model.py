@@ -21,8 +21,8 @@ class UserModel():
         if len(users) != len(clean_users):
             return False
         queries = []
-        #users['username'],users['password'] = self.encrypt(users['username'],users['password'])
         for user in clean_users:
+            #user['username'],user['password'] = self.encrypt(users['username'],users['password'])
             sql = "INSERT INTO users(username,password) VALUES(%s,%s)"
             queries.append({"sql": sql, "bind": (user['username'],user['password'])})
         db = Db.get_instance()

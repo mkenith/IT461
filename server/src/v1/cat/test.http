@@ -1,17 +1,17 @@
-@host = http://127.0.0.1:6000/v1/cats
+@host = http://127.0.0.1:8080/v1/cats
 
 
 ### Get all cats
-GET {{host}}/?fields=name&offset=0&limit=2&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOjEwMCwiZXhwIjoxNjUzMDQzNzA5fQ.DMzXHlhPJs1Du2Um5FH605KW8wt7BsY19T88ZSXboqs HTTP/1.1
+GET {{host}}/?fields=name&offset=0&limit=2&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOjEwMCwiZXhwIjoxNjUzNzI2MDkyfQ.tPnA3X2Hy6tzLQoP-CR9axdaqPC7y7CxfBVv9F3FikA HTTP/1.1
 
 
 ### Create new cats
-POST {{host}}/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOjEwMCwiZXhwIjoxNjUzMDQzNzQ2fQ.s0jd--_RgsTmYtWHbuTRGaxu32CiuxNwOKCLcmynalo HTTP/1.1
+POST {{host}}/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOjEwMCwiZXhwIjoxNjUzNzI1NjQ2fQ.RY4ZhhHwy57KplxVU52w0eQkaFe0z2oVXDAc7W2YcC8 HTTP/1.1
 Content-Type: application/json
 
 {
     "id": 0,
-    "name": "Blackie5"
+    "name": "Catty - monching"
 }
 
 
