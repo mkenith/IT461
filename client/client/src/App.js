@@ -32,13 +32,14 @@ const ROLES = {
 function App() {
     const [dogs, setDogs] = useState([]);
     const [cats, setCats] = useState([]);
-    const [url,setUrl] = useState('/dogs/?limit=3&offset=0');
+    const [urldog,setUrlDog] = useState('/dogs/?limit=3&offset=0');
+    const [urlcat,setUrlCat] = useState('/cats/?limit=3&offset=0');
     const axiosPrivate = useAxiosPrivate();
     const navigate = useNavigate();
     const location = useLocation();
 
     const getDogs = async (url, options = null) => {
-        setUrl(url);
+        setUrlDog(url);
         try {
             const response = await axiosPrivate.get(url, options);
             console.log(response.data);
@@ -49,7 +50,7 @@ function App() {
         }
     }
     const getCats = async (url, options = null) => {
-      setUrl(url);
+      setUrlCat(url);
       try {
           const response = await axiosPrivate.get(url, options);
           console.log(response.data);
@@ -61,9 +62,12 @@ function App() {
   }
     useEffect(() => {
         const controller = new AbortController();
-        getDogs(url, {
+        getDogs(urldog, {
             signal: controller.signal
         });
+        getCats(urlcat, {
+          signal: controller.signal
+      });
         return () => {
             controller.abort();
         }
@@ -73,38 +77,38 @@ function App() {
         console.log('DOG: ', name);
         const response = await axiosPrivate.post('/dogs/', JSON.stringify({id:0,name}));
         console.log(response.data);
-        getDogs(url);
+        getDogs(urldog);
     }
     const dogUpdateHandler = async (dog) =>{
         console.log('DOG: ', dog);
         const response = await axiosPrivate.put('/dogs/', JSON.stringify(dog));
         console.log(response.data);
-        getDogs(url);
+        getDogs(urldog);
     }
     const dogDeleteHandler = async ({id}) =>{
         console.log('DOG: ', id);
         const response = await axiosPrivate.delete('/dogs/', {data : JSON.stringify(id)});
         console.log(response.data);
-        getDogs(url);
+        getDogs(urldog);
     }
     
     const catAddHandler = async ({name}) => {
       console.log('CAT: ', name);
       const response = await axiosPrivate.post('/cats/', JSON.stringify({id:0,name}));
       console.log(response.data);
-      getCats(url);
+      getCats(urlcat);
   }
   const catUpdateHandler = async (dog) =>{
       console.log('CAT: ', dog);
       const response = await axiosPrivate.put('/cats/', JSON.stringify(dog));
       console.log(response.data);
-      getCats(url);
+      getCats(urlcat);
   }
   const catDeleteHandler = async ({id}) =>{
       console.log('CAT: ', id);
       const response = await axiosPrivate.delete('/cats/', {data : JSON.stringify(id)});
       console.log(response.data);
-      getCats(url);
+      getCats(urlcat);
   }
   return (
     <Routes>
